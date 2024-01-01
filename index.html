@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Tunisia</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+    
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        #introduction{
+            display: block;
+        }
+        #slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            width: 500px;
+            height: 300px;
+        }
+
+
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+
+    <header id="discover">
+        <h1>Discover Tunisia</h1>
+    </header>
+
+    <section id="introduction">
+        <h1>Welcome to Tunisia</h1>
+        <h2>🌍 Introduction:</h2>
+        <p>Explore the beauty and charm of Tunisia! Nestled in North Africa, Tunisia boasts a rich blend of history, culture, and breathtaking landscapes.</p>
+    </section>
+
+    <section id="culture-history">
+        <h1>Discover the Rich Heritage</h1>
+        <h2>🎭 Culture and History:</h2>
+        <p>Immerse yourself in Tunisia's cultural tapestry with traditional music, vibrant dance, and captivating art. Delve into the past at iconic landmarks like the ancient ruins of Carthage, weaving a story of millennia.</p>
+    </section>
+
+    <section id="tourist-attractions">
+        <h1>Explore Unforgettable Destinations</h1>
+        <h2>🏛️ Tourist Attractions:</h2>
+        <p>From the enchanting Medina of Tunis to the timeless beauty of Carthage and the endless dunes of the Sahara Desert, Tunisia offers a kaleidoscope of travel experiences. Discover the magic that lies within each corner.        </p>
+    </section>
+
+    <section id="cuisine">
+        <h1>Savor Tunisian Delights</h1>
+        <h2>🍽️ Cuisine:</h2>
+        <p>Embark on a culinary journey with Tunisian flavors. Indulge in the aromatic spices of couscous, the crispiness of brik, and the sweetness of local treats. Your taste buds are in for a treat!</p>
+    </section>
+
+    <section id="beaches">
+        <h1>Soak Up the Sun</h1>
+        <h2>🏖️ Beaches:</h2>
+        <p>Escape to the Mediterranean bliss of Hammamet and Sidi Bou Said. Picture yourself on pristine beaches, basking in the sun or enjoying thrilling water activities. The sea awaits your embrace.</p>
+    </section>
+
+    <section id="events-festivals">
+        <h1>Join the Celebrations</h1>
+        <h2>🎉 Events and Festivals:</h2>
+        <p>Experience the vibrant energy of Tunisia through its lively festivals. Dive into a world of cultural celebration and discover the joy that permeates the air during these special occasions.</p>
+    </section>
+
+    <section id="shopping">
+        <h1>Shop to Your Heart's Content</h1>
+        <h2>🛍️ Shopping:</h2>
+        <p>From the traditional souks filled with local crafts to modern shopping centers, Tunisia offers a shopper's paradise. Take home a piece of Tunisia with unique textiles, crafts, and souvenirs.</p>
+    </section>
+
+    <section id="essential-details">
+        <h1>Practical Information</h1>
+        <h2>🌐 Essential Details:</h2>
+        <p>Plan your journey with ease. Learn about visa requirements, local currency, and the primary language spoken. For any assistance, our tourist information centers are ready to help.</p>
+    </section>
+
+    <section id="social-media">
+        <h1>Connect with Us</h1>
+        <h2>📱 Social Media:</h2>
+        <p>Stay connected! Follow us on social media for the latest updates, travel tips, and share your Tunisia experiences. Use #DiscoverTunisia to be part of the community.</p>
+    </section>
+
+    <footer>
+
+    </footer>
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+    function toggleSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        if (section.style.display === 'none' || section.style.display === '') {
+            section.style.display = 'block';
+        } else {
+            section.style.display = 'none';
+        }
+    }
+
+    var sectionHeaders = document.querySelectorAll('section h1');
+    sectionHeaders.forEach(function (header, index, headersArray) {
+        header.addEventListener('click', function () {
+            toggleSection(this.parentNode.id);
+            // Hide the current section
+            var currentSection = document.getElementById(this.parentNode.id);
+            currentSection.style.display = 'none';
+
+            // Show the next section or the first one if it's the last
+            var nextIndex = (index + 1) % headersArray.length;
+            var nextSection = document.getElementById(headersArray[nextIndex].parentNode.id);
+            nextSection.style.display = 'block';
+        });
+    });
+});
+    </script>
+ 
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var slideIndex = 0;
+
+        function showSlides() {
+            var i;
+            var slides = $('.mySlides');
+
+            for (i = 0; i < slides.length; i++) {
+                slides.eq(i).css('display', 'none');
+            }
+
+            slideIndex++;
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            slides.eq(slideIndex - 1).css('display', 'block');
+            setTimeout(showSlides, 1800); // Change slide every 1,8 seconds
+        }
+
+        showSlides();
+    });
+</script>
+
+<div id="slideshow-container">
+    <div class="mySlides">
+        <img src="image1.jpeg" alt="Image 1">
+    </div>
+    <div class="mySlides">
+        <img src="image2.jpeg" alt="Image 2">
+    </div>
+    <div class="mySlides">
+        <img src="image3.jpeg" alt="Image 3">
+    </div>
+    <div class="mySlides">
+        <img src="image4.jpeg" alt="Image 4">
+    </div>
+    <div class="mySlides">
+        <img src="image5.jpeg" alt="Image 5">
+    </div>
+    <div class="mySlides">
+        <img src="image6.jpeg" alt="Image 6">
+    </div>
+    <div class="mySlides">
+        <img src="image7.jpg" alt="Image 7">
+    </div>
+    <!-- Add more slides as needed -->
+</div>
+
+</html>
